@@ -83,6 +83,9 @@ export PATH=/home/hadoop/presto/trino/jdk17/jdk-17.0.6/bin:$PATH
 export PATH=/home/hadoop/presto/trino/trino-server-406/bin:$PATH
 
 cd /mnt/dfs/1/lakehouse-benchmark-21-SNAPSHOT/temp2/lakehouse-benchmark-21-SNAPSHOT/
+//脚本
+nohup ./run_script.sh > script_output.txt 2>&1 &
+
 nohup java -Dtpcc_name_suffix=_iceberg -jar lakehouse-benchmark.jar -b chbenchmarkForTrino -c config/trino/trino_chbenchmark_config.xml --create=false --load=false --execute=true > output.txt 2>&1 &
 ```
 ### Benchmark
